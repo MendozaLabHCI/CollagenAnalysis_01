@@ -4,7 +4,7 @@ Main file to run: Collagen_PoreSize_Thickness_and_Anisotropy_Analysis01.m
 
 Anisotropy calculation (FourierBased2DFiberAnisotropy.m) is based on a method developed by J. Pablo Marquez (3).
 
-The script ListOfDataFilesToAnalyze03.m lists all the 3D confocal image stack file names, locations, cubic voxel size, starting z-slice (sZ), ending z-slice (eZ).
+The script ListOfDataFilesToAnalyze03.m lists all the 3D confocal image stack file names, locations, cubic voxel size, starting z-slice (sZ), ending z-slice (eZ). Substitute your own data file under idx = 1 to test the code.
 
 References:
   1.  Ohad Gal (2024). fit_ellipse (https://www.mathworks.com/matlabcentral/fileexchange/3215-fit_ellipse), MATLAB Central File Exchange. Retrieved January 11, 2024.
