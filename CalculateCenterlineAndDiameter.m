@@ -46,7 +46,6 @@ if ~isempty(SkelIdx) && ~isequal(length(SkelIdx),1)
         sIdx = knnsearch(V,sPt);
         eIdx = knnsearch(V,ePt);
         %--------------------------------------------------------------------------------
-        %Pairs = CreatePairCombinationsNoRepeatsNoSame(size(V,1));
         Pairs = nchoosek(1:size(V,1),2);
         I = Pairs(:,1);
         J = Pairs(:,2);
@@ -63,7 +62,7 @@ if ~isempty(SkelIdx) && ~isequal(length(SkelIdx),1)
         alpha = max(D);
         beta  = max(DTW).^2;
         gamma = 1/max(DTD);
-        C = alpha*D.^2 + beta*(1./(DTW + 0.0000001)).^2 + gamma*DTD.^2;
+        C = alpha*D.^2 + beta*(1./(DTW + 1E-10)).^2 + gamma*DTD.^2; % Path weights (variation on eq.2 in: https://openaccess.thecvf.com/content/CVPR2022/papers/Liao_Progressive_Minimal_Path_Method_With_Embedded_CNN_CVPR_2022_paper.pdf)
         G = graph(I,J,C);
         path = shortestpath(G,sIdx,eIdx);
         %---------------------------------------------------------------------------------
